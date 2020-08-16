@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "gradle_profiler_pttest"
 version = "0.0.1"
-description = ""
-authors = ["Your name <your@email.com>"]
+description = "Analyses the outcomes of two Gradle Profiler benchmarks with the Paired T-test statistical technique"
+authors = ["Ubiratan Soares <ubiratan.f.soares@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/<repo-owner>/gradle_profiler_pttest"
-repository = "https://github.com/<repo-owner>/gradle_profiler_pttest"
+homepage = "https://github.com/dotanuki-labs/gradle_profiler_pttest"
+repository = "https://github.com/dotanuki-labs/gradle_profiler_pttest"
 include = [ "LICENSE.md" ]
 classifiers = [
     "Environment :: Console",
