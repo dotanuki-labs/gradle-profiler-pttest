@@ -1,0 +1,31 @@
+name: Publish
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Project checkout
+        uses: actions/checkout@v2.3.2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2.1.2
+        with:
+          python-version: '3.8.5'
+
+      - name: Install Poetry
+        uses: dschep/install-poetry-action@v1.3
+
+      - name: Install dependencies
+        run: make setup
+
+      - name: Configure Pypi credentials
+        run: make pypiconfig token=${{ secrets.PYPI_TOKEN }}
+
+      - name: Publish to Pypi
+        run: make deploy

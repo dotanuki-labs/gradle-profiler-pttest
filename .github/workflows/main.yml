@@ -1,0 +1,34 @@
+name: Main
+
+on: push
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Project checkout
+        uses: actions/checkout@v2.3.2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2.1.2
+        with:
+          python-version: '3.8.5'
+
+      - name: Install Poetry
+        uses: dschep/install-poetry-action@v1.3
+
+      - name: Install dependencies
+        run: make setup
+
+      - name: Check codestyle
+        run: make inspect
+
+      - name: Run tests
+        run: make test
+
+      - name: Build Package
+        run: make build
+
+      - name: Upload test reports to Codecov
+        uses: codecov/codecov-action@v1.0.12
