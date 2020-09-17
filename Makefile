@@ -14,7 +14,7 @@ inspect:
 	flake8 gradle_profiler_pttest tests
 
 test:
-	poetry run pytest -vv --cov-report=xml --cov=gradle_profiler_pttest tests/
+	poetry run pytest tests/ -vv
 
 build:
 	poetry build
