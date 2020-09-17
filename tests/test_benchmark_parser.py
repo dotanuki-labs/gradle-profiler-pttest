@@ -27,6 +27,24 @@ def test_should_parse_single_task_gradle_benchmark():
     assert parsed == expected
 
 
+def test_should_parse_multiple_tasks_gradle_benchmark():
+
+    # Given
+    csv = f"{FIXTURES_DIR}/benchmark-two-tasks.csv"
+
+    # When
+    parsed = benchmark_parser.parse(csv)
+
+    # Then
+    task = 'app:assembleDebug'
+    builds = [155132, 147981, 148263]
+    mean = '151303.3'
+    stddev = '4436.1549178940495'
+    expected = GradleBenchmark(task, builds, mean, stddev)
+
+    assert parsed == expected
+
+
 def test_should_handle_corrupted_benchmark():
 
     # Given
