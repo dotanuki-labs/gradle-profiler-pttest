@@ -1,0 +1,24 @@
+scenario,ASSEMBLE DEBUG APK,DETEKT STATIC ANALYSIS
+version,5.6.4,5.6.4
+tasks,app:assembleDebug,detektCheck
+value,execution,execution
+warm-up build #1,156518,125936
+warm-up build #2,141076,108099
+measured build #1,155132,105171
+measured build #2,147981,123587
+measured build #3,148263,128232
+measured build #4,152070,105449
+measured build #5,143118,103939
+measured build #6,152445,106724
+measured build #7,147385,118819
+measured build #8,157161,102276
+measured build #9,154665,102436
+measured build #10,154813,111905
+mean,151303.3,110853.8
+min,143118.0,102276.0
+25th percentile,147832.0,103563.25
+median,152257.5,106086.5
+75th percentile,154892.75,120011.0
+max,157161.0,128232.0
+stddev,4436.1549178940495,9425.140409210535
+confidence,0.0,99.98429477157693
