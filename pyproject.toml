@@ -5,8 +5,8 @@ description = "Analyses the outcomes of two Gradle Profiler benchmarks with the 
 authors = ["Ubiratan Soares <ubiratan.f.soares@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/dotanuki-labs/gradle_profiler_pttest"
-repository = "https://github.com/dotanuki-labs/gradle_profiler_pttest"
+homepage = "https://github.com/dotanuki-labs/gradle-profiler-pttest"
+repository = "https://github.com/dotanuki-labs/gradle-profiler-pttest"
 include = [ "LICENSE.md" ]
 classifiers = [
     "Environment :: Console",
