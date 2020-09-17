@@ -1,0 +1,4 @@
+scenario,Assemble Debug APK
+version,5.1.1
+tasks,mobile:assembleDebug
+value,execution

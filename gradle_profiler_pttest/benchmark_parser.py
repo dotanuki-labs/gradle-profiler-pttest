@@ -4,9 +4,6 @@ import csv
 
 from .gradle_benchmark import GradleBenchmark
 
-DESCRIPTIONS = 0
-VALUES = 1
-
 
 def parse(benchmark_file):
     with open(benchmark_file) as csv_file:
@@ -15,20 +12,32 @@ def parse(benchmark_file):
 
         builds = []
         task = ''
-        mean = 0.0
-        stddev = 0.0
+        mean = ''
+        stddev = ''
 
         for row in data:
-            if 'measured build' in row[DESCRIPTIONS]:
-                builds.append(int(row[VALUES]))
+            description = row[0]
+            value = row[1]
 
-            if 'mean' in row[DESCRIPTIONS]:
-                mean = row[VALUES]
+            if 'measured build' in description:
+                builds.append(int(value))
 
-            if 'stddev' in row[DESCRIPTIONS]:
-                stddev = row[VALUES]
+            if 'mean' in description:
+                mean = value
 
-            if 'tasks' in row[DESCRIPTIONS]:
-                task = row[VALUES]
+            if 'stddev' in description:
+                stddev = value
 
-        return GradleBenchmark(task, builds, mean, stddev)
+            if 'tasks' in description:
+                task = value
+
+        if(values_ensured(builds, task, mean,stddev)):
+            return GradleBenchmark(task, builds, mean, stddev)
+
+
+def values_ensured(*values):
+    for value in values:
+        if not value:
+            return False
+
+    return True

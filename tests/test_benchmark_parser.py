@@ -25,3 +25,15 @@ def test_should_parse_single_task_gradle_benchmark():
     expected = GradleBenchmark(task, builds, mean, stddev)
 
     assert parsed == expected
+
+
+def test_should_handle_corrupted_benchmark():
+
+    # Given
+    csv = f"{FIXTURES_DIR}/benchmark-corrupted.csv"
+
+    # When
+    parsed = benchmark_parser.parse(csv)
+
+    # Then
+    assert parsed is None
