@@ -20,7 +20,7 @@ build:
 	poetry build
 
 run:
-	poetry run gradle_profiler_pttest
+	poetry run gradle-profiler-pttest
 
 pypiconfig:
 	poetry config pypi-token.pypi $(token)
