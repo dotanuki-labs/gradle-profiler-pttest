@@ -13,7 +13,7 @@ def report(analysis):
 
     console.print("\n🔥 [bold cyan]Paired T-test for Gradle Profiler Benchmarks[/bold cyan]")
     console.print(f"\n [bold magenta]Baseline[/bold magenta] → {analysis.baseline.benchmark_file}")
-    console.print(f"\n [bold magenta]Modified[/bold magenta] → {analysis.candidate.benchmark_file}\n")
+    console.print(f"\n [bold magenta]Modified[/bold magenta] → {analysis.modified.benchmark_file}\n")
 
     console.print("\n🔥 [bold cyan]Details for benchmarks[/bold cyan]\n")
     console.print(benchmarks)
@@ -25,7 +25,7 @@ def report(analysis):
 
 def format_benchmarks(analysis):
     h0 = analysis.baseline
-    h1 = analysis.candidate
+    h1 = analysis.modified
 
     benchmarks = Table(show_header=True, header_style="bold magenta")
     benchmarks.pad_edge = False

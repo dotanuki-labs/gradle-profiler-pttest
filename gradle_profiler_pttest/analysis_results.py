@@ -15,6 +15,6 @@ class PairedTTestDetails:
 @dataclass
 class AnalysisResults:
     baseline: GradleBenchmark
-    candidate: GradleBenchmark
+    modified: GradleBenchmark
     details: PairedTTestDetails
     improvement_detected: bool

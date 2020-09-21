@@ -9,10 +9,10 @@ from .analysis_results import PairedTTestDetails
 SIGNIFICANCE_LEVEL = 0.05
 
 
-def analyse(baseline, candidate):
-    stats = ttest(baseline.builds, candidate.builds, paired=True, tail='greater').round(3)
+def analyse(baseline, modified):
+    stats = ttest(baseline.builds, modified.builds, paired=True, tail='greater').round(3)
     tstatistic = stats.loc['T-test', 'T']
     pvalue = stats.loc['T-test', 'p-val']
     improvement_detected = pvalue < SIGNIFICANCE_LEVEL
     details = PairedTTestDetails(tstatistic, pvalue, SIGNIFICANCE_LEVEL)
-    return AnalysisResults(baseline, candidate, details, improvement_detected)
+    return AnalysisResults(baseline, modified, details, improvement_detected)
