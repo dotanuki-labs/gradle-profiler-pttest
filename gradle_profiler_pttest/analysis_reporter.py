@@ -11,15 +11,17 @@ def report(analysis):
 
     console = Console()
 
-    console.print("\n🔥 [bold cyan]Paired T-test for Gradle Profiler Benchmarks[/bold cyan]")
-    console.print(f"\n [bold magenta]Baseline[/bold magenta] → {analysis.baseline.benchmark_file}")
-    console.print(f"\n [bold magenta]Modified[/bold magenta] → {analysis.modified.benchmark_file}\n")
+    console.print("\n🔥 [bold cyan]Paired T-test analysis for Gradle Profiler Benchmarks[/bold cyan]\n")
+    console.print(f"[bold magenta]- Baseline[/bold magenta] → {analysis.baseline.benchmark_file}")
+    console.print(f"[bold magenta]- Modified[/bold magenta] → {analysis.modified.benchmark_file}")
 
     console.print("\n🔥 [bold cyan]Details for benchmarks[/bold cyan]\n")
     console.print(benchmarks)
 
-    console.print("\n🔥 [bold cyan]Outcomes from the left-tailed Paired T-test[/bold cyan]\n")
+    console.print("\n🔥 [bold cyan]Outcomes from hyphotesis testing (h0 versus h1, left-tailed)[/bold cyan]\n")
     console.print(results)
+
+    console.print("\n🔥 [bold cyan]Conclusions[/bold cyan]")
     console.print(conclusion)
 
 
@@ -43,11 +45,11 @@ def format_benchmarks(analysis):
 def format_results(analysis):
     results = Table(show_header=True, header_style="bold magenta")
     results.pad_edge = False
-    results.add_column("Statistic Metric")
-    results.add_column("Value")
+    results.add_column("Metric")
+    results.add_column("Assigned value", justify="right")
 
     details = analysis.details
-    results.add_row("Significance Level", f"{details.significance_level}")
+    results.add_row("Significance", format(details.significance_level, '.3f'))
     results.add_row("p-value", f"{details.pvalue}")
 
     return results
@@ -55,8 +57,8 @@ def format_results(analysis):
 
 def format_conclusion(analysis):
     improved = analysis.improvement_detected
-    accepted_prefix = "\n⚡️ [cyan]p-value[/cyan] is lower than [cyan]significance level[/cyan]\n"
-    rejected_prefix = "\n⚡️ [cyan]p-value[/cyan] is greater than [cyan]significance level[/cyan]\n"
+    accepted_prefix = "\nThe [cyan]p-value[/cyan] is lower than [cyan]significance level[/cyan]."
+    rejected_prefix = "\nThe [cyan]p-value[/cyan] is greater than [cyan]significance level[/cyan]."
     conclusion_posfix = "for improvements with modified build conditions.\n"
 
     if improved:

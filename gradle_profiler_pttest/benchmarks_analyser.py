@@ -6,7 +6,7 @@ from .analysis_results import AnalysisResults
 from .analysis_results import PairedTTestDetails
 
 
-SIGNIFICANCE_LEVEL = 0.05
+SIGNIFICANCE_LEVEL = 0.050
 
 
 def analyse(baseline, modified):
