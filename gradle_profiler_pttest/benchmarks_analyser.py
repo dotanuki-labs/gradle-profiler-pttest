@@ -13,7 +13,6 @@ def analyse(baseline, candidate):
     stats = ttest(baseline.builds, candidate.builds, paired=True, tail='greater').round(3)
     tstatistic = stats.loc['T-test', 'T']
     pvalue = stats.loc['T-test', 'p-val']
-    print(stats)
     improvement_detected = pvalue < SIGNIFICANCE_LEVEL
     details = PairedTTestDetails(tstatistic, pvalue, SIGNIFICANCE_LEVEL)
     return AnalysisResults(baseline, candidate, details, improvement_detected)

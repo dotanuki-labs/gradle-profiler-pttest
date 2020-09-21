@@ -23,16 +23,16 @@ def parse(benchmark_file):
                 builds.append(int(value))
 
             if 'mean' in description:
-                mean = value
+                mean = float(value)
 
             if 'stddev' in description:
-                stddev = value
+                stddev = float(value)
 
             if 'tasks' in description:
                 task = value
 
         if(values_ensured(builds, task, mean,stddev)):
-            return GradleBenchmark(task, builds, mean, stddev)
+            return GradleBenchmark(benchmark_file, task, builds, mean, stddev)
 
 
 def values_ensured(*values):

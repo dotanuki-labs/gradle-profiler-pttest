@@ -6,7 +6,8 @@ from typing import List
 
 @dataclass
 class GradleBenchmark:
+    benchmark_file:str
     gradle_task:str
     builds: List[int]
-    mean: str
-    stddev: str
+    mean: float
+    stddev: float

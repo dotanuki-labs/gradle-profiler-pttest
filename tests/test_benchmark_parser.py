@@ -20,9 +20,9 @@ def test_should_parse_single_task_gradle_benchmark():
     # Then
     task = 'mobile:assembleDebug'
     builds = [34123, 36909, 36047, 39181, 33351]
-    mean = '36435.26666666667'
-    stddev = '3062.134233939895'
-    expected = GradleBenchmark(task, builds, mean, stddev)
+    mean = 36435.26
+    stddev = 3062.13
+    expected = GradleBenchmark(csv, task, builds, mean, stddev)
 
     assert parsed == expected
 
@@ -38,9 +38,9 @@ def test_should_parse_multiple_tasks_gradle_benchmark():
     # Then
     task = 'app:assembleDebug'
     builds = [155132, 147981, 148263]
-    mean = '151303.3'
-    stddev = '4436.1549178940495'
-    expected = GradleBenchmark(task, builds, mean, stddev)
+    mean = 151303.3
+    stddev = 4436.15
+    expected = GradleBenchmark(csv, task, builds, mean, stddev)
 
     assert parsed == expected
 
