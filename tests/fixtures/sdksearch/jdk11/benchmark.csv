@@ -1,0 +1,31 @@
+scenario,Run fun build
+version,5.6.2
+tasks,build
+value,execution
+warm-up build #1,312375
+warm-up build #2,236850
+warm-up build #3,225637
+warm-up build #4,226498
+measured build #1,223441
+measured build #2,233868
+measured build #3,229048
+measured build #4,222471
+measured build #5,220577
+measured build #6,232524
+measured build #7,227043
+measured build #8,242229
+measured build #9,240888
+measured build #10,226484
+measured build #11,228190
+measured build #12,238772
+measured build #13,236907
+measured build #14,238396
+measured build #15,240183
+mean,232068.06666666668
+min,220577.0
+25th percentile,226484.0
+median,232524.0
+75th percentile,238772.0
+max,242229.0
+stddev,7259.989113201859
+confidence,0.0
