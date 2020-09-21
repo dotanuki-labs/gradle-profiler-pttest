@@ -1,0 +1,31 @@
+scenario,Assemble Debug APK
+version,6.2
+tasks,mobile:assembleDebug
+value,execution
+warm-up build #1,140917
+warm-up build #2,19883
+warm-up build #3,18078
+warm-up build #4,16951
+measured build #1,17405
+measured build #2,16656
+measured build #3,17904
+measured build #4,16976
+measured build #5,16542
+measured build #6,17248
+measured build #7,16550
+measured build #8,16677
+measured build #9,17338
+measured build #10,16062
+measured build #11,17619
+measured build #12,16728
+measured build #13,17584
+measured build #14,16510
+measured build #15,18206
+mean,17067.0
+min,16062.0
+25th percentile,16550.0
+median,16976.0
+75th percentile,17584.0
+max,18206.0
+stddev,603.4271171519273
+confidence,0.0

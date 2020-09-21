@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Benchmark Results</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><style>
+.diff { font-size: 9pt; color: #c0c0c0; }
+.numeric { text-align: right; }
+.summary { vertical-align: top; }
+</style>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'></script>
+</head>
+<body>
+<div class='container mt-5 mb-5'>
+<h1>Benchmark results</h1>
+<div class='row mt-5'>
+<div class='col ml-auto mr-auto'>
+<canvas id='samples' width='900' height='400'></canvas></div>
+</div>
+<div class='row mt-5'>
+<div class='col'>
+<table class='table table-sm table-hover'>
+<thead>
+<tr><th>Scenario</th><th colspan='1'>Assemble Debug APK</th></tr>
+<tr><th>Version</th><th colspan='1'>5.1.1</th></tr>
+<tr><th>Tasks</th><th colspan='1'>mobile:assembleDebug</th></tr>
+<tr><th>Sample</th><th>execution</th></tr>
+</thead>
+<tbody>
+<tr><td>warm-up build #1</td><td class='numeric'>124024</td></tr>
+<tr><td>warm-up build #2</td><td class='numeric'>37010</td></tr>
+<tr><td>warm-up build #3</td><td class='numeric'>33502</td></tr>
+<tr><td>warm-up build #4</td><td class='numeric'>33687</td></tr>
+<tr><td>measured build #1</td><td class='numeric'>34123</td></tr>
+<tr><td>measured build #2</td><td class='numeric'>36909</td></tr>
+<tr><td>measured build #3</td><td class='numeric'>36047</td></tr>
+<tr><td>measured build #4</td><td class='numeric'>39181</td></tr>
+<tr><td>measured build #5</td><td class='numeric'>33351</td></tr>
+<tr><td>measured build #6</td><td class='numeric'>43674</td></tr>
+<tr><td>measured build #7</td><td class='numeric'>37096</td></tr>
+<tr><td>measured build #8</td><td class='numeric'>40155</td></tr>
+<tr><td>measured build #9</td><td class='numeric'>33220</td></tr>
+<tr><td>measured build #10</td><td class='numeric'>33978</td></tr>
+<tr><td>measured build #11</td><td class='numeric'>38613</td></tr>
+<tr><td>measured build #12</td><td class='numeric'>37658</td></tr>
+<tr><td>measured build #13</td><td class='numeric'>35229</td></tr>
+<tr><td>measured build #14</td><td class='numeric'>32595</td></tr>
+<tr><td>measured build #15</td><td class='numeric'>34700</td></tr>
+<tr><td class='summary font-weight-bold'>mean</td><td class='numeric summary'>36435.27</td></tr>
+<tr><td class='summary font-weight-bold'>min</td><td class='numeric summary'>32595.00</td></tr>
+<tr><td class='summary font-weight-bold'>25th percentile</td><td class='numeric summary'>33978.00</td></tr>
+<tr><td class='summary font-weight-bold'>median</td><td class='numeric summary'>36047.00</td></tr>
+<tr><td class='summary font-weight-bold'>75th percentile</td><td class='numeric summary'>38613.00</td></tr>
+<tr><td class='summary font-weight-bold'>max</td><td class='numeric summary'>43674.00</td></tr>
+<tr><td class='summary font-weight-bold'>stddev</td><td class='numeric summary'>3062.13</td></tr>
+<tr><td class='summary font-weight-bold'>confidence</td><td class='numeric summary'>0.00</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<script>
+var ctx = document.getElementById('samples').getContext('2d');
+var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,],
+        datasets: [
+{
+            label: 'Assemble Debug APK 5.1.1',
+            showLine: false,
+            fill: false,
+            borderWidth: 2,
+            borderColor: '#527AB3',
+            data: [34123,36909,36047,39181,33351,43674,37096,40155,33220,33978,38613,37658,35229,32595,34700,]
+},
+        ]
+    },
+    options: { responsive: false }
+});
+</script>
+</body>
+</html>
