@@ -32,13 +32,8 @@ def format_benchmarks(analysis):
     benchmarks.add_column("Mean", justify="right")
     benchmarks.add_column("Standard Deviation", justify="right")
 
-    benchmarks.add_row(
-        "baseline (h0)", f"{len(h0.measured_builds)}", h0.mean, h0.standard_deviation
-    )
-
-    benchmarks.add_row(
-        "modified (h1)", f"{len(h1.measured_builds)}", h1.mean, h1.standard_deviation
-    )
+    benchmarks.add_row("baseline (h0)", f"{len(h0.builds)}", h0.mean, h0.stddev)
+    benchmarks.add_row("modified (h1)", f"{len(h1.builds)}", h1.mean, h1.stddev)
 
     return benchmarks
 
