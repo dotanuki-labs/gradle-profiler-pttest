@@ -37,3 +37,19 @@ def test_should_accept_improvements_given_benchmarks(capsys):
     captured = capsys.readouterr()
     assert "p-value is lower than significance level" in captured.out
     assert "we have strong statistical evidence for improvements" in captured.out
+
+
+def test_should_report_execution_errors(capsys):
+
+    # Given
+    baseline = f"{FIXTURES_DIR}/iosched/outdated-agp/benchmark.csv"
+    modified = f"{FIXTURES_DIR}/iosched/new-agp/benchmark.csv"  # does not exist
+
+    # When
+    argv = ['-b', baseline, '-m', modified]
+    app.main(argv)
+
+    # Then
+    captured = capsys.readouterr()
+    assert f"Can't parse benchmarks inputs from {modified}" in captured.out
+    assert "Could not complete analysis" in captured.out
