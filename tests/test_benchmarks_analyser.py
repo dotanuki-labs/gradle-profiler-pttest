@@ -3,6 +3,8 @@
 from gradle_profiler_pttest import benchmarks_analyser
 from gradle_profiler_pttest.gradle_benchmark import GradleBenchmark
 
+import pytest
+
 
 def test_should_detect_improvement_with_pttest():
 
@@ -46,3 +48,21 @@ def test_should_detect_no_improvements_with_pttest():
 
     # Then
     assert not results.improvement_detected
+
+
+def test_handle_execution_errors_from_analysis():
+    with pytest.raises(Exception) as error:
+
+        # Given
+        task = 'mobile:assembleDebug'
+
+        builds = None
+        mean = None
+        stddev = None
+        baseline = GradleBenchmark("baseline.csv", task, builds, mean, stddev)
+
+        # When
+        benchmarks_analyser.analyse(baseline, None)
+
+        # Then
+        assert 'Failed when runnig analyser' in str(error.value)
