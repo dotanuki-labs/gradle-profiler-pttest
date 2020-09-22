@@ -1,6 +1,7 @@
 # test_benchmark_parser.py
 
 import os
+import pytest
 
 from gradle_profiler_pttest import benchmark_parser
 from gradle_profiler_pttest.gradle_benchmark import GradleBenchmark
@@ -55,3 +56,15 @@ def test_should_handle_corrupted_benchmark():
 
     # Then
     assert parsed is None
+
+
+def test_should_handle_error_when_opening_benchmark_file():
+    with pytest.raises(Exception) as error:
+        # Given
+        csv = f"{FIXTURES_DIR}/missing.csv"
+
+        # When
+        benchmark_parser.parse(csv)
+
+        # Then
+        assert f"Can't parse benchmarks inputs from {csv}" in str(error.value)
