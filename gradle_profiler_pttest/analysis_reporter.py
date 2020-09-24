@@ -50,7 +50,13 @@ def format_results(analysis):
 
     details = analysis.details
     results.add_row("Significance", format(details.significance_level, '.3f'))
-    results.add_row("p-value", f"{details.pvalue}")
+
+    formatted_pvalue = format(details.pvalue, '.3f')
+
+    if details.pvalue == 0.0:
+        formatted_pvalue = f"~ {formatted_pvalue}"
+
+    results.add_row("p-value", formatted_pvalue)
 
     return results
 
