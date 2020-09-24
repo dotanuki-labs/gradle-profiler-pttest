@@ -1,18 +1,53 @@
-# Gradle Profiler - pttest
+# Gradle Profiler - Paired T-test analyser
 
 > Analyses the outcomes of two Gradle Profiler benchmarks with the Paired T-test statistical technique
 
 ## Context
 
-// TODO
+> Complete blog post to come. Stay tunned
+
+## Install with pip
+
+```shell
+pip install gradle-profiler-pttest
+```
+
+Requires Python 3.8.+..
 
 ## Using
 
+- Run benchmarks with Gradle profiler for the status quo (`baseline`) and for the modification applied the your Gradle project (`modified`)
+
+- Pass generated CSV files to `gradle-profiler-pttest` 
+
+```bash
+
+gradle-profiler-pttest \
+	-b <path/to/baseline/benchmark.csv> \
+	-m <path/to/modified/benchmark.csv>
+	
+```
+
+- Profit the results
+
+![](.github/assets/showcase.png)
+
+## Under the hood
+
 // TODO
 
-## Building and Running
+## Contributing
 
-// TODO
+- Ensure you have Python 3.8.+ 
+- Ensure you have flake8 support in your text editor / IDE
+- Check our [contribution guidelines](./CONTRIBUTING.md)
+- Make sure you have a gree build
+
+```
+make flake8
+make test
+```
+- Summit your PR 🔥
 
 ## Author
 
