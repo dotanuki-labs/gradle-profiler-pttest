@@ -25,7 +25,7 @@ Install from your CLI with `pip`
 pip install gradle-profiler-pttest
 ```
 
-Requires Python 3.8.+.
+Requires Python 3.8.5 or newer
 
 ## Using
 
@@ -46,8 +46,8 @@ gradle-profiler-pttest \
 
 ## Contributing
 
-- Ensure you have Python 3.8.+ 
-- Ensure you have flake8 support in your text editor / IDE
+- Ensure you have Python 3.8.5 or newer installed
+- Ensure you have [flake8](https://pypi.org/project/flake8/) support in your text editor / IDE
 - Check our [contribution guidelines](./CONTRIBUTING.md)
 - Make sure you have a green build
 
