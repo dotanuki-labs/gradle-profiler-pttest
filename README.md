@@ -22,16 +22,16 @@ This tool is built on top of [pingouin](https://pingouin-stats.org/), an opinion
 
 Note that the ideal size for samples should be a small one - ideally between 10 and 30 measured builds - in order to make sense of T-student analysis.
 
-## Install with pip
+## Installing
 
-Install from your CLI with `pip`
+Install from your CLI with [pip](https://pypi.org/project/pip/)
 
 
 ```shell
 pip install gradle-profiler-pttest
 ```
 
-Requires Python 3.8.5 or newer
+Requires **Python 3.8.5** or newer
 
 ## Using
 
@@ -57,7 +57,7 @@ Right now `gradle-profiler-pttest` supports **only one Gradle task per supplied 
 
 - Ensure you have Python 3.8.5 or newer installed
 - Ensure you have [flake8](https://pypi.org/project/flake8/) support in your text editor / IDE
-- Check our [contribution guidelines](./CONTRIBUTING.md)
+- Check the [contribution guidelines](./CONTRIBUTING.md)
 - Make sure you have a green build
 
 ```
@@ -65,6 +65,12 @@ make flake8
 make test
 ```
 - Summit your PR 🔥
+
+
+## Credits
+
+- [Raphael Vallat](https://github.com/raphaelvallat) for [pingouin](https://github.com/raphaelvallat/pingouin/), it made the task super easy
+- [Will McGugan](https://github.com/willmcgugan) for [rich](https://github.com/willmcgugan/rich), I wish I had something awesome like this for my JVM projects
 
 ## Author
 
