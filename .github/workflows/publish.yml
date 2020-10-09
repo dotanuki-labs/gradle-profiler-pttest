@@ -24,8 +24,5 @@ jobs:
       - name: Install dependencies
         run: make setup
 
-      - name: Configure Pypi credentials
-        run: make pypiconfig token=${{ secrets.PYPI_TOKEN }}
-
       - name: Publish to Pypi
         run: make deploy
