@@ -1,0 +1,28 @@
+scenario,Build Project
+version,Gradle 6.1.1
+tasks,build
+value,execution
+warm-up build #1,117109
+warm-up build #2,50308
+warm-up build #3,56469
+warm-up build #4,42476
+measured build #1,41442
+measured build #2,39199
+measured build #3,40969
+measured build #4,39189
+measured build #5,39211
+measured build #6,38752
+measured build #7,45290
+measured build #8,44671
+measured build #9,38931
+measured build #10,37200
+measured build #11,50077
+measured build #12,33115
+measured build #13,42448
+measured build #14,31998
+measured build #15,37194
+measured build #16,37064
+measured build #17,33169
+measured build #18,40158
+measured build #19,38395
+measured build #20,35503
