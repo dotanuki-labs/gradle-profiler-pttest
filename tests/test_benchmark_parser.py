@@ -7,7 +7,7 @@ from gradle_profiler_pttest import benchmark_parser
 from gradle_profiler_pttest.gradle_benchmark import GradleBenchmark
 
 
-FIXTURES_DIR = f"{os.getcwd()}/tests/fixtures/samples"
+FIXTURES_DIR = f"{os.getcwd()}/tests/fixtures/old-csv-format/samples"
 
 
 def test_should_parse_single_task_gradle_benchmark():

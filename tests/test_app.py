@@ -10,8 +10,8 @@ FIXTURES_DIR = f"{os.getcwd()}/tests/fixtures"
 def test_should_reject_improvements_given_benchmarks(capsys):
 
     # Given
-    baseline = f"{FIXTURES_DIR}/sdksearch/jdk8/benchmark.csv"
-    modified = f"{FIXTURES_DIR}/sdksearch/jdk11/benchmark.csv"
+    baseline = f"{FIXTURES_DIR}/old-csv-format/sdksearch/jdk8/benchmark.csv"
+    modified = f"{FIXTURES_DIR}/old-csv-format/sdksearch/jdk11/benchmark.csv"
 
     # When
     argv = ['-b', baseline, '-m', modified]
@@ -26,8 +26,8 @@ def test_should_reject_improvements_given_benchmarks(capsys):
 def test_should_accept_improvements_given_benchmarks_in_the_old_format(capsys):
 
     # Given
-    baseline = f"{FIXTURES_DIR}/iosched/outdated-agp/benchmark.csv"
-    modified = f"{FIXTURES_DIR}/iosched/updated-agp/benchmark.csv"
+    baseline = f"{FIXTURES_DIR}/old-csv-format/iosched/outdated-agp/benchmark.csv"
+    modified = f"{FIXTURES_DIR}/old-csv-format/iosched/updated-agp/benchmark.csv"
 
     # When
     argv = ['-b', baseline, '-m', modified]
@@ -58,8 +58,8 @@ def test_should_accept_improvements_given_benchmarks_in_the_new_format(capsys):
 def test_should_report_execution_errors(capsys):
 
     # Given
-    baseline = f"{FIXTURES_DIR}/iosched/outdated-agp/benchmark.csv"
-    modified = f"{FIXTURES_DIR}/iosched/new-agp/benchmark.csv"  # does not exist
+    baseline = f"{FIXTURES_DIR}/old-csv-format/iosched/outdated-agp/benchmark.csv"
+    modified = f"{FIXTURES_DIR}/old-csv-format/iosched/new-agp/benchmark.csv"  # does not exist
 
     # When
     argv = ['-b', baseline, '-m', modified]
