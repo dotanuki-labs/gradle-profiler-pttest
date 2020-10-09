@@ -1,4 +1,6 @@
-clean:
+.DEFAULT_GOAL := help
+
+clean: ## Clean project files
 	rm -rf *.egg-info
 	rm -rf dist
 	rm -rf gradle_profiler_pttest/__pycache__
@@ -7,24 +9,27 @@ clean:
 	rm -rf .coverage
 	rm -rf coverage.xml
 
-setup:
+setup: ## Install dependencies
 	poetry install
 
-inspect:
+inspect: ## Run code style checks
 	flake8 gradle_profiler_pttest tests
 
-test:
+test: ## Run unit and integration tests
 	poetry run pytest -vv --cov-report=xml --cov=gradle_profiler_pttest tests
 
-build:
+build: ## Package this project in wheels/zip formats
 	poetry build
 
-run:
+run: ## Run this project. Accepts baseline and modified as arguments
 	poetry run gradle-profiler-pttest -b $(baseline) -m $(modified)
 
-pypiconfig:
+deploy: ## Deploy the current build to Pypi
 	poetry config pypi-token.pypi $(token)
-
-deploy:
 	poetry build
 	poetry publish
+
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) |\
+		sort |\
+		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
