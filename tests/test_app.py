@@ -35,7 +35,7 @@ def test_should_accept_improvements_given_benchmarks_in_the_old_format(capsys):
 
     # Then
     captured = capsys.readouterr()
-    assert "p-value is lower than significance level" in captured.out
+    assert "p-value is smaller than significance level" in captured.out
     assert "we have strong statistical evidence for improvements" in captured.out
 
 
@@ -51,7 +51,7 @@ def test_should_accept_improvements_given_benchmarks_in_the_new_format(capsys):
 
     # Then
     captured = capsys.readouterr()
-    assert "p-value is lower than significance level" in captured.out
+    assert "p-value is smaller than significance level" in captured.out
     assert "we have strong statistical evidence for improvements" in captured.out
 
 
