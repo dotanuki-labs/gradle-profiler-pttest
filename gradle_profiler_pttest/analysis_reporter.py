@@ -11,14 +11,17 @@ def report(analysis):
 
     console = Console()
 
-    console.print("\n🔥 [bold cyan]Paired T-test analysis for Gradle Profiler Benchmarks[/bold cyan]\n")
+    title = 'Paired T-test analysis for Gradle Profiler Benchmarks'
+    console.print(f"\n🔥 [bold cyan]{title}[/bold cyan]\n")
     console.print(f"[bold magenta]- Baseline[/bold magenta] → {analysis.baseline.benchmark_file}")
     console.print(f"[bold magenta]- Modified[/bold magenta] → {analysis.modified.benchmark_file}")
 
-    console.print("\n🔥 [bold cyan]Details for benchmarks[/bold cyan]\n")
+    details = 'Details for benchmarks'
+    console.print(f"\n🔥 [bold cyan]{details}[/bold cyan]\n")
     console.print(benchmarks)
 
-    console.print("\n🔥 [bold cyan]Outcomes from hyphotesis testing (h0 versus h1, left-tailed)[/bold cyan]\n")
+    outcomes = 'Outcomes from hyphotesis testing (h0 versus h1, left-tailed)'
+    console.print(f"\n🔥 [bold cyan]{outcomes}[/bold cyan]\n")
     console.print(results)
 
     console.print("\n🔥 [bold cyan]Conclusions[/bold cyan]")
@@ -63,7 +66,7 @@ def format_results(analysis):
 
 def format_conclusion(analysis):
     improved = analysis.improvement_detected
-    accepted_prefix = "\nThe [cyan]p-value[/cyan] is lower than [cyan]significance level[/cyan]."
+    accepted_prefix = "\nThe [cyan]p-value[/cyan] is smaller than [cyan]significance level[/cyan]."
     rejected_prefix = "\nThe [cyan]p-value[/cyan] is greater than [cyan]significance level[/cyan]."
     conclusion_posfix = "for improvements with modified build conditions.\n"
 
