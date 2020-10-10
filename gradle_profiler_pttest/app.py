@@ -1,5 +1,6 @@
 # app.py
 
+import logging
 
 from . import analysis_reporter
 from . import benchmark_parser
@@ -17,6 +18,6 @@ def main(argv=None):
         analysis = benchmarks_analyser.analyse(baseline, modified)
         analysis_reporter.report(analysis)
 
-    except Exception as error:
-        print(error)
-        print("Could not complete analysis. Aborting.\n")
+    except:
+        logging.exception("An exception occurred")
+        logging.error("Could not complete analysis. Aborting.")

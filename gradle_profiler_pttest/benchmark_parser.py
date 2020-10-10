@@ -1,6 +1,7 @@
 # benchmark_parser.py
 
 import csv
+import logging
 import numpy
 
 from .gradle_benchmark import GradleBenchmark
@@ -30,6 +31,10 @@ def parse(benchmark_file):
                 mean = round(numpy.mean(builds), 2)
                 stddev = round(numpy.std(builds), 2)
                 return GradleBenchmark(benchmark_file, task, builds, mean, stddev)
+            else:
+                logging.error("Missing measured builds or task name")
 
-    except:
-        raise Exception(f"Can't parse benchmarks inputs from {benchmark_file}")
+    except Exception:
+        logging.error("Error when parsing benchmarks")
+        description = f"Can't parse benchmarks inputs from {benchmark_file}"
+        raise Exception(description)

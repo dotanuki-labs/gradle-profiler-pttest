@@ -55,7 +55,7 @@ def test_should_accept_improvements_given_benchmarks_in_the_new_format(capsys):
     assert "we have strong statistical evidence for improvements" in captured.out
 
 
-def test_should_report_execution_errors(capsys):
+def test_should_report_execution_errors(caplog):
 
     # Given
     baseline = f"{FIXTURES_DIR}/old-csv-format/iosched/outdated-agp/benchmark.csv"
@@ -66,6 +66,5 @@ def test_should_report_execution_errors(capsys):
     app.main(argv)
 
     # Then
-    captured = capsys.readouterr()
-    assert f"Can't parse benchmarks inputs from {modified}" in captured.out
-    assert "Could not complete analysis" in captured.out
+    assert "Error when parsing benchmarks" in caplog.text
+    assert "Could not complete analysis" in caplog.text
