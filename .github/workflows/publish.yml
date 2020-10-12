@@ -25,4 +25,4 @@ jobs:
         run: make setup
 
       - name: Publish to Pypi
-        run: make deploy
+        run: make deploy token=${{ secrets.PYPI_TOKEN }}
