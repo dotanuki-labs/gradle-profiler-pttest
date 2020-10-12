@@ -66,5 +66,5 @@ def test_should_report_execution_errors(caplog):
     app.main(argv)
 
     # Then
-    assert "Error when parsing benchmarks" in caplog.text
+    assert "Error when parsing benchmark" in caplog.text
     assert "Could not complete analysis" in caplog.text

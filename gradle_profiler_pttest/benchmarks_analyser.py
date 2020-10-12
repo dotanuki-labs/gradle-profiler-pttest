@@ -1,5 +1,7 @@
 # benchmarks_analyser.py
 
+import logging
+
 from pingouin import ttest
 
 from .analysis_results import AnalysisResults
@@ -18,4 +20,5 @@ def analyse(baseline, modified):
         details = PairedTTestDetails(tstatistic, pvalue, SIGNIFICANCE_LEVEL)
         return AnalysisResults(baseline, modified, details, improvement_detected)
     except:
+        logging.exception("Error when runnig analyser")
         raise Exception('Failed when runnig analyser for benchmarks')

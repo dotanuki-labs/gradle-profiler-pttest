@@ -35,6 +35,6 @@ def parse(benchmark_file):
                 logging.error("Missing measured builds or task name")
 
     except Exception:
-        logging.error("Error when parsing benchmarks")
+        logging.exception("Error when parsing benchmark")
         description = f"Can't parse benchmarks inputs from {benchmark_file}"
         raise Exception(description)
