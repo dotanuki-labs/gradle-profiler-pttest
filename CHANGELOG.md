@@ -4,6 +4,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3] 2020-10-12
+
+### Added
+- Better logs and traces when reporting handled errors
+
 ## [0.0.2] 2020-10-10
 
 ### Fixed
