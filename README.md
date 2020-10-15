@@ -17,7 +17,7 @@ The goal is provide a super easy way to compare two benchmarks for Gradle builds
 
 This tool is built on top of [pingouin](https://pingouin-stats.org/), an opinionated Statistics library which leverages NumPy, Pandas and SciPy. Among other things, `gradle-profiler-pttest` features :
 
-- An opinionated [hyphotesis test](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing) (left-tailed) where we want to check if **modified build conditions** (_h1_) have a mean **statistically lower** than **baseline build conditions** (_h0_), which means better execution times given the modifications applied
+- An opinionated [hyphotesis test](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing) (left-tailed) where we want to check if **modified build conditions** (_h1_) have a mean **statistically smaller** than the one we get from**baseline build conditions** (_h0_), which means better execution times given the modifications applied
 - Auto-correction for benchmark samples with different sizes
 
 Note that the ideal size for samples should be a small one - ideally between 10 and 30 measured builds - in order to make sense of T-student analysis.
