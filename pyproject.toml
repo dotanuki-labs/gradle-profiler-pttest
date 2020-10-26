@@ -17,7 +17,7 @@ classifiers = [
 python = "3.8.5"
 flake8 = "3.8.4"
 pingouin = "0.3.8"
-rich = "9.0.1"
+rich = "9.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "6.1.1"
