@@ -56,7 +56,8 @@ Right now `gradle-profiler-pttest` supports **only one Gradle task per supplied 
 ## Contributing
 
 - Ensure you have Python 3.8.5 or newer installed
-- Ensure you have [flake8](https://pypi.org/project/flake8/) support in your text editor / IDE
+- Ensure you have [flake8](https://pypi.org/project/flake8/) installed and supported in your text editor / IDE
+- Ensure you have [Poetry](https://python-poetry.org/) installed
 - Check the [contribution guidelines](./CONTRIBUTING.md)
 - Make sure you have a green build
 
@@ -64,7 +65,7 @@ Right now `gradle-profiler-pttest` supports **only one Gradle task per supplied 
 make flake8
 make test
 ```
-- Summit your PR 🔥
+- Submit your PR 🔥
 
 
 ## Credits
