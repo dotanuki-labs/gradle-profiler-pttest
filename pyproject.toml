@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gradle-profiler-pttest"
-version = "0.0.3"
+version = "0.0.4"
 description = "Analyses the outcomes of two Gradle Profiler benchmarks with the Paired T-test statistical technique"
 authors = ["Ubiratan Soares <ubiratan.f.soares@gmail.com>"]
 license = "MIT"

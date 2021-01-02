@@ -31,7 +31,9 @@ Install from your CLI with [pip](https://pypi.org/project/pip/)
 pip install gradle-profiler-pttest
 ```
 
-Requires **Python 3.8.5** or newer
+Requires **Python 3.8.5** or newer.
+
+When running this tool on MacOS Catalina or newer, [please check instructions](https://docs.scipy.org/doc/scipy/reference/building/macosx.html) in order to have SciPy properly installed in your local machine.
 
 ## Using
 
