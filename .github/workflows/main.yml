@@ -4,6 +4,11 @@ on: [push, pull_request]
 
 jobs:
   main:
+    strategy:
+      fail-fast: true
+      matrix:
+        python: ['3.8.5', '3.8.6', '3.9']
+
     runs-on: ubuntu-latest
 
     steps:
@@ -13,7 +18,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2.2.1
         with:
-          python-version: '3.8.5'
+          python-version: ${{ matrix.python }}
 
       - name: Install Poetry
         uses: snok/install-poetry@v1.1.1
