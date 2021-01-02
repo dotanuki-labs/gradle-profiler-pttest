@@ -4,6 +4,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4] 2021-01-02
+
+### Added
+- Support to Python 3.9.x
+- Better pipelines on CI
+
 ## [0.0.3] 2020-10-12
 
 ### Added
