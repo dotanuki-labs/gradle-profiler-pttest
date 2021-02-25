@@ -379,7 +379,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
 name = "rich"
-version = "9.11.1"
+version = "9.12.0"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 category = "main"
 optional = false
@@ -537,7 +537,7 @@ viz = ["matplotlib", "seaborn", "nc-time-axis"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8.5"
-content-hash = "0e29b41bde84900de9771fee97f8c4ac8b1f5816cd74df24d31ba4b0b9868397"
+content-hash = "254142d4ba6be0cfa9caa95dbcea36fb719d4e52141dc38ab2051ed0347d01b3"
 
 [metadata.files]
 atomicwrites = [
@@ -851,8 +851,8 @@ requests = [
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
 ]
 rich = [
-    {file = "rich-9.11.1-py3-none-any.whl", hash = "sha256:1f7c481be658eb27f451c3f714aec5bc1fc2431c28f89848ef589c2392171f2e"},
-    {file = "rich-9.11.1.tar.gz", hash = "sha256:86a157008d17c73ee03da80de91e09fc2f7713109ccd4e90496eeb3702bef638"},
+    {file = "rich-9.12.0-py3-none-any.whl", hash = "sha256:dc2499772c96bd2c488b34739425d1cdfa433bf394f4f2f5af5ca6f399171df0"},
+    {file = "rich-9.12.0.tar.gz", hash = "sha256:27e3deb24555d7dad554afa871c7e77f16a0336a625ed78dd10de21193b4ec11"},
 ]
 scikit-learn = [
     {file = "scikit-learn-0.24.0.tar.gz", hash = "sha256:076369634ee72b5a5941440661e2f306ff4ac30903802dc52031c7e9199ac640"},
