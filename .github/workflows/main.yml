@@ -29,7 +29,7 @@ jobs:
         uses: actions/cache@v2.1.4
         with:
           path: .venv
-          key: ${{ runner.os }}-cache
+          key: ${{ runner.os }}-cache-${{ hashFiles('**/poetry.lock') }}
           restore-keys: ${{ runner.os }}-cache-
 
       - name: Install Poetry
@@ -39,7 +39,7 @@ jobs:
           virtualenvs-in-project: true
 
       - name: Install dependencies
-        run:  make setup && source $VENV
+        run:  make setup
 
       - name: Check codestyle
         run: make inspect
