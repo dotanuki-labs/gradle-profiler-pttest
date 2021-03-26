@@ -27,6 +27,7 @@ jobs:
 
       - name: Setup cache
         uses: actions/cache@v2.1.4
+        id: cached-poetry-dependencies
         with:
           path: .venv
           key: ${{ runner.os }}-cache-${{ hashFiles('**/poetry.lock') }}
