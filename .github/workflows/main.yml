@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        python: ['3.8.6', '3.9.1']
+        python: ['3.8.8', '3.9.2']
         os: ['ubuntu-18.04', 'macos-10.15']
 
     runs-on: ${{ matrix.os }}
@@ -30,8 +30,8 @@ jobs:
         id: cached-poetry-dependencies
         with:
           path: .venv
-          key: ${{ runner.os }}-cache-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: ${{ runner.os }}-cache-
+          key: ${{ runner.os }}-${{ matrix.python }}-cache-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: ${{ runner.os }}-${{ matrix.python }}-cache-
 
       - name: Install Poetry
         uses: snok/install-poetry@v1.1.2
