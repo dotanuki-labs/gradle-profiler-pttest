@@ -39,7 +39,7 @@ jobs:
           virtualenvs-in-project: true
 
       - name: Install dependencies
-        run: make setup
+        run:  make setup && source $VENV
 
       - name: Check codestyle
         run: make inspect
