@@ -13,6 +13,7 @@ setup: ## Install dependencies
 	poetry install
 
 inspect: ## Run code style checks
+	python -m pip install flake8
 	flake8 gradle_profiler_pttest tests
 
 test: ## Run unit and integration tests

@@ -25,14 +25,21 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
 
+      - name: Setup cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: .venv
+          key: ${{ runner.os }}-cache-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: ${{ runner.os }}-cache-
+
       - name: Install Poetry
         uses: snok/install-poetry@v1.1.2
         with:
-          virtualenvs-create: false
-          virtualenvs-in-project: false
+          virtualenvs-create: true
+          virtualenvs-in-project: true
 
       - name: Install dependencies
-        run: make setup
+        run:  make setup
 
       - name: Check codestyle
         run: make inspect
