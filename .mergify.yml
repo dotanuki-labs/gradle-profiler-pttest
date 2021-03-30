@@ -24,3 +24,4 @@ pull_request_rules:
     actions:
       merge:
         method: squash
+        merge_bot_account: dotanukibot
