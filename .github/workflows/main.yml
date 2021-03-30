@@ -15,6 +15,7 @@ jobs:
         os: ['ubuntu-18.04', 'macos-10.15']
 
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
 
     steps:
       - name: Project checkout
