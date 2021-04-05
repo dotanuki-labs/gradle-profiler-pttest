@@ -20,7 +20,7 @@ pingouin = "0.3.10"
 rich = "10.1.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "6.2.2"
+pytest = "6.2.3"
 pytest-cov = "2.11.1"
 
 [tool.poetry.scripts]
