@@ -27,7 +27,7 @@ jobs:
           python-version: ${{ matrix.python }}
 
       - name: Setup cache
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.5
         id: cached-poetry-dependencies
         with:
           path: .venv
