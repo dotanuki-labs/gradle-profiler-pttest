@@ -11,16 +11,16 @@ def report(analysis):
 
     console = Console()
 
-    title = 'Paired T-test analysis for Gradle Profiler Benchmarks'
+    title = "Paired T-test analysis for Gradle Profiler Benchmarks"
     console.print(f"\n🔥 [bold cyan]{title}[/bold cyan]\n")
     console.print(f"[bold magenta]- Baseline[/bold magenta] → {analysis.baseline.benchmark_file}")
     console.print(f"[bold magenta]- Modified[/bold magenta] → {analysis.modified.benchmark_file}")
 
-    details = 'Details for benchmarks'
+    details = "Details for benchmarks"
     console.print(f"\n🔥 [bold cyan]{details}[/bold cyan]\n")
     console.print(benchmarks)
 
-    outcomes = 'Outcomes from hyphotesis testing (h0 versus h1, left-tailed)'
+    outcomes = "Outcomes from hyphotesis testing (h0 versus h1, left-tailed)"
     console.print(f"\n🔥 [bold cyan]{outcomes}[/bold cyan]\n")
     console.print(results)
 
@@ -39,8 +39,12 @@ def format_benchmarks(analysis):
     benchmarks.add_column("Mean", justify="right")
     benchmarks.add_column("Standard Deviation", justify="right")
 
-    benchmarks.add_row("baseline (h0)", f"{len(h0.builds)}", format(h0.mean, '.2f'), format(h0.stddev, '.2f'))
-    benchmarks.add_row("modified (h1)", f"{len(h1.builds)}", format(h1.mean, '.2f'), format(h1.stddev, '.2f'))
+    benchmarks.add_row(
+        "baseline (h0)", f"{len(h0.builds)}", format(h0.mean, ".2f"), format(h0.stddev, ".2f")
+    )
+    benchmarks.add_row(
+        "modified (h1)", f"{len(h1.builds)}", format(h1.mean, ".2f"), format(h1.stddev, ".2f")
+    )
 
     return benchmarks
 
@@ -52,9 +56,9 @@ def format_results(analysis):
     results.add_column("Assigned value", justify="right")
 
     details = analysis.details
-    results.add_row("Significance", format(details.significance_level, '.3f'))
+    results.add_row("Significance", format(details.significance_level, ".3f"))
 
-    formatted_pvalue = format(details.pvalue, '.3f')
+    formatted_pvalue = format(details.pvalue, ".3f")
 
     if details.pvalue == 0.0:
         formatted_pvalue = f"~ {formatted_pvalue}"

@@ -10,22 +10,22 @@ from .gradle_benchmark import GradleBenchmark
 def parse(benchmark_file):
     try:
         with open(benchmark_file) as csv_file:
-            data = csv.reader(csv_file, delimiter=',')
+            data = csv.reader(csv_file, delimiter=",")
 
             builds = []
-            task = ''
+            task = ""
 
             for row in data:
                 description = row[0]
                 value = row[1]
 
-                if 'measured build' in description:
+                if "measured build" in description:
                     builds.append(int(value))
 
-                if 'tasks' in description:
+                if "tasks" in description:
                     task = value
 
-            if(builds and task):
+            if builds and task:
                 # We now have to calculate mean and stddev by our own since
                 # Gradle Profiler does not report these metrics in the CSV anymore
                 mean = round(numpy.mean(builds), 2)
