@@ -11,10 +11,11 @@ clean: ## Clean project files
 
 setup: ## Install dependencies
 	poetry install --no-interaction --no-root
-	python -m pip install flake8
+	python -m pip install flake8 black
 
 inspect: ## Run code style checks
 	flake8 gradle_profiler_pttest tests
+	black --check gradle_profiler_pttest tests
 
 test: ## Run unit and integration tests
 	poetry run pytest -vv --cov-report=xml --cov=gradle_profiler_pttest tests
