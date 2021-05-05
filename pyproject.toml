@@ -19,7 +19,7 @@ pingouin = "0.3.11"
 rich = "10.1.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "6.2.3"
+pytest = "6.2.4"
 pytest-cov = "2.11.1"
 flake8 = "3.9.1"
 black = "^21.5b0"
