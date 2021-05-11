@@ -22,7 +22,7 @@ rich = "10.1.0"
 pytest = "6.2.4"
 pytest-cov = "2.11.1"
 flake8 = "3.9.2"
-black = "^21.5b0"
+black = "^21.5b1"
 
 [tool.poetry.scripts]
 gradle-profiler-pttest = "gradle_profiler_pttest:main"
