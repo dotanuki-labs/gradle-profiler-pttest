@@ -15,7 +15,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8.5"
-pingouin = "0.3.11"
+pingouin = "0.3.12"
 rich = "10.2.2"
 
 [tool.poetry.dev-dependencies]

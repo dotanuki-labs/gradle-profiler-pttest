@@ -291,7 +291,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "pingouin"
-version = "0.3.11"
+version = "0.3.12"
 description = "Pingouin: statistical package for Python"
 category = "main"
 optional = false
@@ -592,7 +592,7 @@ viz = ["matplotlib", "seaborn", "nc-time-axis"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8.5"
-content-hash = "1aa82765a4faa0d2449ecc1eed3c29104d8aeb69179a0a9b8a55866de88a0695"
+content-hash = "a4fa0f5f49b1d9f12a072e4d7102395d2bf0b1fc3c79fa4d8b45fa038426b8fa"
 
 [metadata.files]
 appdirs = [
@@ -882,7 +882,7 @@ pillow = [
     {file = "Pillow-8.0.1.tar.gz", hash = "sha256:11c5c6e9b02c9dac08af04f093eb5a2f84857df70a7d4a6a6ad461aca803fb9e"},
 ]
 pingouin = [
-    {file = "pingouin-0.3.11.tar.gz", hash = "sha256:91a636f3028f7a62402b884dccaff4b02ac1383f3d70148a0280f91157d53956"},
+    {file = "pingouin-0.3.12.tar.gz", hash = "sha256:38e265394fe6a16de23a153a60d7d3db02c38427a31cc88c70523783cdc6c5ac"},
 ]
 pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
