@@ -8,9 +8,12 @@ clean: ## Clean project files
 	rm -rf .pytest_cache
 	rm -rf .coverage
 	rm -rf coverage.xml
+	rm -rf .venv
 
 setup: ## Install dependencies
-	poetry install --no-interaction --no-root
+	poetry update
+	poetry config virtualenvs.in-project true
+	poetry install
 
 inspect: ## Run code style checks
 	poetry run flake8 gradle_profiler_pttest tests

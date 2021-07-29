@@ -8,3 +8,6 @@ __pycache__
 
 .coverage
 coverage.xml
+
+.venv
+.idea

@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        python: ['3.8.9', '3.9.5']
+        python: ['3.8.11', '3.9.6']
         os: ['ubuntu-18.04', 'macos-10.15']
 
     runs-on: ${{ matrix.os }}
@@ -48,9 +48,6 @@ jobs:
 
       - name: Run tests
         run: make test
-
-      - name: Build Package
-        run: make build
 
       - name: Upload test reports to Codecov
         uses: codecov/codecov-action@v2.0.2
