@@ -7,7 +7,6 @@ from .gradle_benchmark import GradleBenchmark
 
 @dataclass
 class PairedTTestDetails:
-    t_statistic: float
     pvalue: float
     significance_level: float
 

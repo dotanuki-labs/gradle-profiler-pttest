@@ -568,7 +568,7 @@ python-versions = ">=3.6"
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -594,6 +594,17 @@ secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "cer
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
+name = "vulture"
+version = "2.3"
+description = "Find dead code"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+toml = "*"
+
+[[package]]
 name = "xarray"
 version = "0.19.0"
 description = "N-D labeled arrays and datasets in Python"
@@ -616,7 +627,7 @@ viz = ["matplotlib", "seaborn", "nc-time-axis"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8.5"
-content-hash = "fd6164fc2fccd16b74960197bc3556939fd1f0e32cac5c663b39e5dffc5be9fa"
+content-hash = "6b0e830d972863e8a8988916e694be421de4f9c20f427780a623e7f981580bfd"
 
 [metadata.files]
 appdirs = [
@@ -1110,6 +1121,10 @@ tomli = [
 urllib3 = [
     {file = "urllib3-1.26.6-py2.py3-none-any.whl", hash = "sha256:39fb8672126159acb139a7718dd10806104dec1e2f0f6c88aab05d17df10c8d4"},
     {file = "urllib3-1.26.6.tar.gz", hash = "sha256:f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f"},
+]
+vulture = [
+    {file = "vulture-2.3-py2.py3-none-any.whl", hash = "sha256:f39de5e6f1df1f70c3b50da54f1c8d494159e9ca3d01a9b89eac929600591703"},
+    {file = "vulture-2.3.tar.gz", hash = "sha256:03d5a62bcbe9ceb9a9b0575f42d71a2d414070229f2e6f95fa6e7c71aaaed967"},
 ]
 xarray = [
     {file = "xarray-0.19.0-py3-none-any.whl", hash = "sha256:da0f0d7719b5ee95143a34804e3afb82cb8abbe5c10f9750a9dbed156ad30f00"},

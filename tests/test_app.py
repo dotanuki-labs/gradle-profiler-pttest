@@ -1,6 +1,7 @@
 # test_app.py
 
 import os
+import pytest
 
 from gradle_profiler_pttest import app
 
@@ -57,14 +58,16 @@ def test_should_accept_improvements_given_benchmarks_in_the_new_format(capsys):
 
 def test_should_report_execution_errors(caplog):
 
-    # Given
-    baseline = f"{FIXTURES_DIR}/old-csv-format/iosched/outdated-agp/benchmark.csv"
-    modified = f"{FIXTURES_DIR}/old-csv-format/iosched/new-agp/benchmark.csv"  # does not exist
+    with pytest.raises(Exception):
 
-    # When
-    argv = ["-b", baseline, "-m", modified]
-    app.main(argv)
+        # Given
+        baseline = f"{FIXTURES_DIR}/old-csv-format/iosched/outdated-agp/benchmark.csv"
+        modified = f"{FIXTURES_DIR}/old-csv-format/iosched/new-agp/benchmark.csv"  # does not exist
 
-    # Then
-    assert "Error when parsing benchmark" in caplog.text
-    assert "Could not complete analysis" in caplog.text
+        # When
+        argv = ["-b", baseline, "-m", modified]
+        app.main(argv)
+
+        # Then
+        assert "Error when parsing benchmark" in caplog.text
+        assert "Could not complete analysis" in caplog.text
