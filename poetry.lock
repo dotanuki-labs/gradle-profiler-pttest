@@ -325,6 +325,17 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 dev = ["pre-commit", "tox"]
 
 [[package]]
+name = "pretty-errors"
+version = "1.2.23"
+description = "Prettifies Python exception output to make it legible."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+colorama = "*"
+
+[[package]]
 name = "py"
 version = "1.10.0"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
@@ -605,7 +616,7 @@ viz = ["matplotlib", "seaborn", "nc-time-axis"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8.5"
-content-hash = "f35f88d561033ac26582f89188bef16eafe3e1f344dbd5b254b66cd45b5be62e"
+content-hash = "fd6164fc2fccd16b74960197bc3556939fd1f0e32cac5c663b39e5dffc5be9fa"
 
 [metadata.files]
 appdirs = [
@@ -901,6 +912,10 @@ pingouin = [
 pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
     {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
+]
+pretty-errors = [
+    {file = "pretty_errors-1.2.23-py3-none-any.whl", hash = "sha256:2c6a228d1c13d6dde56c5af52bc9b63f95561c7123433e4476b3bc5fec8cecd5"},
+    {file = "pretty_errors-1.2.23.tar.gz", hash = "sha256:e8a5abbad5cd70302f2f435709d82ce97d1c05b1d4d6c1636e4ff1ffbf517360"},
 ]
 py = [
     {file = "py-1.10.0-py2.py3-none-any.whl", hash = "sha256:3b80836aa6d1feeaa108e046da6423ab8f6ceda6468545ae8d02d9d58d18818a"},
