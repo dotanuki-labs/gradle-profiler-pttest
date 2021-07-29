@@ -18,6 +18,7 @@ setup: ## Install dependencies
 inspect: ## Run code style checks
 	poetry run flake8 gradle_profiler_pttest tests
 	poetry run black --check gradle_profiler_pttest tests
+	poetry run vulture gradle_profiler_pttest tests
 
 test: ## Run unit and integration tests
 	poetry run pytest -vv --cov-report=xml --cov=gradle_profiler_pttest tests

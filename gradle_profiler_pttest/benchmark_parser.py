@@ -30,7 +30,7 @@ def parse(benchmark_file):
                 # Gradle Profiler does not report these metrics in the CSV anymore
                 mean = round(numpy.mean(builds), 2)
                 stddev = round(numpy.std(builds), 2)
-                return GradleBenchmark(benchmark_file, task, builds, mean, stddev)
+                return GradleBenchmark(benchmark_file, builds, mean, stddev)
             else:
                 logging.error("Missing measured builds or task name")
 
