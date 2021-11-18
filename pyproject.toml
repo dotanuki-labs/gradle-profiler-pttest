@@ -23,7 +23,7 @@ pretty-errors = "1.2.24"
 pytest = "6.2.5"
 pytest-cov = "3.0.0"
 flake8 = "4.0.1"
-black = "21.11b0"
+black = "21.11b1"
 vulture = "2.3"
 
 [tool.poetry.scripts]
