@@ -17,7 +17,7 @@ classifiers = [
 python = "^3.8"
 pingouin = "0.3.12"
 rich = "10.14.0"
-pretty-errors = "1.2.24"
+pretty-errors = "1.2.25"
 
 [tool.poetry.dev-dependencies]
 pytest = "6.2.5"
