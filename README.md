@@ -1,3 +1,7 @@
+> # ⚠️ NO LONGER MAINTENED  ⚠️
+> This project will be deprecated soon.
+> If you are still interested in solution, consider forking this repo.
+
 # Paired T-tests for Gradle Benchmarks
 
 [![Flake8](https://img.shields.io/badge/codestyle-flake8-yellow)](https://flake8.pycqa.org/en/latest/)
