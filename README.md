@@ -1,5 +1,5 @@
 > # ⚠️ NO LONGER MAINTENED  ⚠️
-> This project will be deprecated soon.
+> This project is deprecated.
 > If you are still interested in solution, consider forking this repo.
 
 # Paired T-tests for Gradle Benchmarks
